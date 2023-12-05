@@ -21,7 +21,8 @@ This project is a web application inspired by Airbnb, developed using the MERN (
 
 ## Setup Instructions
 
-1. Clone the repository: ```git clone https://github.com/yourusername/airbnb-like-project.git```
+1. Clone the repository: ```command
+git clone https://github.com/sapekshpareek/Airbnb.git```
 2. Install dependencies for frontend and backend:
    - Frontend: `cd frontend && npm install`
    - Backend: `cd backend && npm install`
