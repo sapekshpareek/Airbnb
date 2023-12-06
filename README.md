@@ -21,13 +21,28 @@ This project is a web application inspired by Airbnb, developed using the MERN (
 
 ## Setup Instructions
 
-1. Clone the repository: ~~~git clone https://github.com/sapekshpareek/Airbnb.git~~~
+1. Clone the repository: 
+``` 
+git clone https://github.com/sapekshpareek/Airbnb.git
+```
 2. Install dependencies for frontend and backend:
-   - Frontend: `cd frontend && npm install`
-   - Backend: `cd backend && npm install`
+   - Frontend: 
+   ``` 
+   cd frontend && npm install
+   ```
+   - Backend: 
+   ```
+    cd backend && npm install
+   ```
 3. Set up environment variables for MongoDB connection, API keys, etc.
-4. Start the backend server: `cd backend && npm start`
-5. Start the frontend application: `cd frontend && npm start`
+4. Start the backend server: 
+```
+cd backend && npm start
+```
+5. Start the frontend application: 
+```
+cd frontend && npm start
+```
 6. Access the application via `http://localhost:3000` in your browser.
 
 ## Screenshots/Demo
@@ -37,7 +52,7 @@ Include screenshots or a link to a live demo to showcase the project's functiona
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the [Stormborn Software](https://bit.ly/sapekshp).
 
 ## Acknowledgements
 
