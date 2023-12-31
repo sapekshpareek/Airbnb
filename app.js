@@ -48,7 +48,7 @@ app.use(flash());
 
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
-  console.log(res.locals.success);
+  res.locals.deleted = req.flash("deleted");
   next();
 });
 
