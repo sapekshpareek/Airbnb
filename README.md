@@ -1,4 +1,4 @@
-# Airbnb
+# Wanderly - A Airbnb Clone
 
 This project is a web application inspired by Airbnb, developed using the MERN (MongoDB, Express.js, React.js, Node.js) stack. The goal is to create a platform where users can browse, search for, and book accommodations, emphasizing responsiveness for seamless use across devices.
 
