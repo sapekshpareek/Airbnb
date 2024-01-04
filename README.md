@@ -52,7 +52,7 @@ Include screenshots or a link to a live demo to showcase the project's functiona
 
 ## License
 
-This project is licensed under the [Stormborn Software](https://bit.ly/sapekshp).
+Copyright © 2023-24, [Sapeksh Pareek](https://bit.ly/sapekshp). Released under the [MIT Licence](https://en.wikipedia.org/wiki/MIT_License).
 
 ## Acknowledgements
 
