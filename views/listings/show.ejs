@@ -8,10 +8,11 @@
         <img src="<%=listing.image %>" class="card-img-top show-img"  alt="listing-image">
         <div class="card-body">
             <p class="card-text mt-3">
-            <%= listing.description %> <br>
-            <%= listing.location %> <br>
-            <%= listing.country %> <br>
-            ₹<%= listing.price.toLocaleString("en-IN") %> <br>
+            <p><%= listing.description %></p>
+            <p><%= listing.location %></p>
+            <p><%= listing.country %></p>
+            <p>Owned by: <i><%= listing.owner.username.toUpperCase() %></i></p>
+            <p>₹<%= listing.price.toLocaleString("en-IN") %></p>
             </p>
         </div>
     </div>
