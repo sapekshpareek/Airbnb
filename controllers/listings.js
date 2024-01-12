@@ -1,4 +1,3 @@
-const { model } = require("mongoose");
 const Listing = require("../models/listing.js");
 
 module.exports.index = async (req, res) => {
@@ -6,7 +5,11 @@ module.exports.index = async (req, res) => {
   res.render("./listings/index.ejs", { allListings });
 };
 
-module.exports.show = async (req, res) => {
+module.exports.renderNewForm =  (req, res) => {
+  res.render("./listings/new.ejs");
+};
+
+module.exports.showListing = async (req, res) => {
   let { id } = req.params;
   const listing = await Listing.findById(id)
     .populate({

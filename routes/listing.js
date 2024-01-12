@@ -1,19 +1,20 @@
 const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
-const Listing = require("../models/listing.js");
 const { isLoggedIn, isOwner, validateListing } = require("../middleware.js");
-
 const listingController = require("../controllers/listings.js");
 
 router
   .route("/")
   .get(wrapAsync(listingController.index))
   .post(validateListing, wrapAsync(listingController.createListing));
+  
+  // New Route
+  router.get("/new", isLoggedIn, listingController.renderNewForm);
 
 router
   .route("/:id")
-  .get(wrapAsync(listingController.show))
+  .get(wrapAsync(listingController.showListing))
   .put(
     isLoggedIn,
     isOwner,
@@ -22,10 +23,6 @@ router
   )
   .delete(isLoggedIn, isOwner, wrapAsync(listingController.destroyListing));
 
-// New Route
-router.get("/new", isLoggedIn, (req, res) => {
-  res.render("./listings/new.ejs");
-});
 
 // Edit Route
 router.get(
