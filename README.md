@@ -55,4 +55,3 @@ Include screenshots or a link to a live demo to showcase the project's functiona
 Copyright © 2023, [Sapeksh Pareek](https://bit.ly/sapekshp). Released under the [MIT Licence](https://en.wikipedia.org/wiki/MIT_License).
 
 ## Acknowledgements
-
