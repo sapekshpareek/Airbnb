@@ -1,4 +1,5 @@
 const Listing = require("../models/listing.js");
+const mbxStyles = require("@mapbox/mapbox-sdk/services/styles.js");
 
 module.exports.index = async (req, res) => {
   const allListings = await Listing.find({});
