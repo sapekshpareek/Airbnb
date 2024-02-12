@@ -1,5 +1,8 @@
 <% layout("/layouts/boilerplate") %>
-
+<script>
+    const mapToken = "<%= process.env.MAP_TOKEN %>";
+    const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
+</script>
 <div class="row mt-3">
     <div class="col-md-8 offset-md-3">
         <h3><%= listing.title %></h3>
@@ -75,16 +78,8 @@
     <div class="col-md-6 offset-md-3 mb-3">
         <h3>Where you'll be</h3>
         <div id="map" class="card-img-top">
-            <script>
-                let mapToken = "<%=process.env.MAP_TOKEN %>";
-                mapboxgl.accessToken = mapToken;
-                console.log(mapToken);
-                const map = new mapboxgl.Map({
-                    container: 'map', // container ID
-                    center: [77.4126, 23.2599], // starting position [lng, lat]
-                    zoom: 9 // starting zoom
-                });
-            </script> 
         </div>
     </div>
 </div>
+
+<script src="/js/map.js"></script> 

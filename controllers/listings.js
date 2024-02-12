@@ -33,13 +33,10 @@ module.exports.showListing = async (req, res) => {
 module.exports.createListing = async (req, res, next) => {
   let response = await geocodingClient
     .forwardGeocode({
-      query: "New Delhi, India",
+      query: req.body.listing.location,
       limit: 1,
     })
     .send();
-  
-  console.log(response);
-  res.send("done!");
 
   let url = req.file.path;
   let filename = req.file.filename;
@@ -47,6 +44,7 @@ module.exports.createListing = async (req, res, next) => {
   const newListing = new Listing(req.body.listing);
   newListing.owner = req.user._id;
   newListing.image = { url, filename };
+  newListing.geometry = response.body.features[0].geometry;
   await newListing.save();
   // const newListing = new Listing(req.body.listing);
   // newListing.owner = req.user._id;
