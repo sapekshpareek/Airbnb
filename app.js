@@ -19,8 +19,8 @@ const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderly";
-const dbURL = process.env.ATLASDB_URL;
+const dbURL = "mongodb://127.0.0.1:27017/wanderly";
+// const dbURL = process.env.ATLASDB_URL;
 
 main()
   .then(() => {
@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 const store = MongoStore.create({
   mongoUrl: dbURL,
   crypto: {
-    secret: "mysupersecretcode",
+    secret: process.env.SECRET,
   },
   touchAfter: 24 * 3600,
 });
@@ -55,7 +55,7 @@ store.on("error", () => {
 
 const sessionOptions = {
   store,
-  secret: "mysupersecretcode",
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -96,7 +96,8 @@ app.use((req, res, next) => {
 //   res.send(registerdUser);
 // });
 
-app.use("/listings", listingRouter);
+app.use("/listings", listingRouter);  
+app.use("/", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
